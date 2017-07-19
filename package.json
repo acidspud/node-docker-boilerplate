@@ -1,0 +1,22 @@
+{
+  "name": "app-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "3.4.*",
+    "express": "4.14.*",
+    "grunt": "^1.0.1",
+    "http": "0.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "grunt-eslint": "^19.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
