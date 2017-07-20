@@ -1,9 +1,15 @@
 // const grunt = require('load-grunt-tasks'); // npm install --save-dev load-grunt-tasks
 const path = require('path');
 
-// const pathConfig = require('./config/paths');
+const pathConfig = require('./config/paths');
 
 module.exports = function gruntExport (grunt) {
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-express-server');
+
+
   grunt.initConfig({
     eslint: {
       gruntfile: ['Gruntfile.js'],
@@ -18,10 +24,31 @@ module.exports = function gruntExport (grunt) {
           // path.resolve(pathConfig.serverLib, '{,**/}*.js')
         ]
       }
+    },
+    express: {
+      options: {
+        port: 9000,
+        background: true,
+        output: /App - Server listening on port \d+/
+      },
+      serverDev: {
+        options: {
+          args: ['-dev'],
+          script: path.resolve(pathConfig.server, 'index.js')
+        }
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-eslint');
+  grunt.registerTask('lint', [
+    'eslint:gruntfile'
+  ]);
+
+
+  grunt.registerTask('server', [
+    'eslint:serverjs',
+    'express:serverDev'
+  ]);
 
   grunt.registerTask('default', ['eslint:serverjs']);
 };
