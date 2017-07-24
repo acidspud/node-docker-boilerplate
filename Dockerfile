@@ -1,5 +1,13 @@
-FROM python:3.4-alpine
-ADD . /code
-WORKDIR /code
-RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+FROM node:boron
+EXPOSE 9000
+WORKDIR /usr/app
+
+# COPY package.json .
+# RUN npm install
+
+COPY ./node_modules/. /usr/app/node_modules/
+
+# Bundle app source
+COPY . /usr/app
+
+CMD [ "npm", "start" ]

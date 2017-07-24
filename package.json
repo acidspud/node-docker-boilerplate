@@ -2,9 +2,9 @@
   "name": "app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt server"
   },
   "author": "",
   "license": "ISC",
@@ -12,11 +12,13 @@
     "bluebird": "3.4.*",
     "express": "4.14.*",
     "grunt": "^1.0.1",
-    "http": "0.0.0",
-    "path": "^0.12.7",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-express-server": "^0.5.3",
     "grunt-eslint": "^19.0.0",
-    "grunt-express-server": "^0.5.3"
+    "http": "0.0.0",
+    "http-shutdown": "1.1.*",
+    "path": "^0.12.7",
+    "node.extend": "1.1.*"
   },
   "devDependencies": {
     "grunt-eslint": "^19.0.0",

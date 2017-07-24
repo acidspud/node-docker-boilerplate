@@ -28,12 +28,11 @@ module.exports = function gruntExport (grunt) {
     express: {
       options: {
         port: 9000,
-        background: true,
-        output: /App - Server listening on port \d+/
+        background: false
+        // output: /App - Server listening on port \d+/
       },
       serverDev: {
         options: {
-          args: ['-dev'],
           script: path.resolve(pathConfig.server, 'index.js')
         }
       }
