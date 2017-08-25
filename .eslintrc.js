@@ -3,7 +3,7 @@ module.exports = {
   parser: 'espree',
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'script',
+    sourceType: 'module',
     ecmaFeatures: {
       experimentalObjectRestSpread: false,
       globalReturn: true,
@@ -396,7 +396,7 @@ module.exports = {
       'error'                         // disallow string concatenation with `__dirname` and `__filename`
     ],
     'no-process-env': [                // http://eslint.org/docs/rules/no-process-env
-      'error'                         // disallow the use of `process.env`
+      'warn'                         // disallow the use of `process.env`
     ],
     'no-process-exit': [               // http://eslint.org/docs/rules/no-process-exit
       'error'                         // disallow the use of `process.exit()`

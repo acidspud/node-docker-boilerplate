@@ -1,27 +1,40 @@
 {
-  "name": "app-server",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grunt server"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bluebird": "3.4.*",
-    "express": "4.14.*",
-    "grunt": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-express-server": "^0.5.3",
-    "grunt-eslint": "^19.0.0",
-    "http": "0.0.0",
-    "http-shutdown": "1.1.*",
-    "path": "^0.12.7",
-    "node.extend": "1.1.*"
-  },
-  "devDependencies": {
-    "grunt-eslint": "^19.0.0",
-    "load-grunt-tasks": "^3.5.2"
-  }
+	"name": "app-server",
+	"version": "1.0.0",
+	"license": "ISC",
+	"scripts": {
+		"gruntstart": "grunt server",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "cd build && node main",
+		"compile": "node build.js && backpack build",
+		"dev": "node build.js && backpack dev | pino -o 'short'"
+	},
+	"dependencies": {
+		"body-parser": "^1.15.2",
+		"cookie-parser": "^1.4.3",
+		"dotenv": "^2.0.0",
+		"express": "^4.15.3",
+		"grunt-contrib-watch": "^1.0.0",
+		"grunt-eslint": "^19.0.0",
+		"grunt-express-server": "^0.5.3",
+		"grunt": "^1.0.1",
+		"http-shutdown": "1.1.*",
+		"http": "0.0.0",
+		"path": "^0.12.7",
+		"pino": "^4.6.0",
+		"source-map-support": "^0.4.12",
+		"swagger-express-middleware": "^1.0.0-alpha.12",
+		"webpack": "^3.5.4"
+	},
+	"devDependencies": {
+		"babel-preset-env": "^1.6.0",
+    "babel-preset-es2017": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"backpack-core": "^0.2.1",
+		"grunt-dock": "^1.1.5",
+		"grunt-eslint": "^19.0.0",
+		"load-grunt-tasks": "^3.5.2",
+		"nodemon": "^1.11.0",
+		"shelljs": "^0.7.6"
+	}
 }

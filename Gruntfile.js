@@ -9,7 +9,6 @@ module.exports = function gruntExport (grunt) {
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-express-server');
 
-
   grunt.initConfig({
     eslint: {
       gruntfile: ['Gruntfile.js'],
@@ -19,21 +18,17 @@ module.exports = function gruntExport (grunt) {
           path.resolve(__dirname, '*.js'),
           path.resolve(__dirname, 'server/*.js'),
           path.resolve(__dirname, 'config/*.js')
-          // path.resolve(__dirname, 'config/{,**/}*.js')
-          // path.resolve(pathConfig.server, 'index.js'),
-          // path.resolve(pathConfig.serverLib, '{,**/}*.js')
         ]
       }
     },
     express: {
       options: {
-        port: 9000,
-        background: false
-        // output: /App - Server listening on port \d+/
+        background: true,
+        output: /App1 - Server listening on port \d+/
       },
       serverDev: {
         options: {
-          script: path.resolve(pathConfig.server, 'index.js')
+          script: path.resolve(pathConfig.server, 'app.js')
         }
       }
     }
